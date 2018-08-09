@@ -19,7 +19,7 @@ export default class ImageButton extends Component {
     return (
       <TouchableOpacity 
         style={this.props.style}
-        onPress={() =>this.onPress()} >
+        onPress={() => this.onPress()} >
         <Image 
           source = {this.props.source} >
         </Image>

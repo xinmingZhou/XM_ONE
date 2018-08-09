@@ -11,22 +11,23 @@ import HomeScene from "../Scene/HomeScene";
 import AllScene from "../Scene/AllScene";
 import MeScene from "../Scene/MeScene";
 import SettingScene from "../Scene/SettingScene";
+import LoginScene from "../Scene/LoginScene";
 
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 console.ignoredYellowBox = ['Remote debugger'];
 
 const tabImgs = {
   tabHome: {
-    normalImage:require('../Images/homeUnselectedV4.png'),
-    selectedImage:require('../Images/homeSelectedV4.png')
+    normalImage: require('../Images/homeUnselectedV4.png'),
+    selectedImage: require('../Images/homeSelectedV4.png')
   },
   tabAll: {
-    normalImage:require('../Images/allUnselectedV4.png'),
-    selectedImage:require('../Images/allSelectedV4.png')
+    normalImage: require('../Images/allUnselectedV4.png'),
+    selectedImage: require('../Images/allSelectedV4.png')
   },
   TabMe: {
-    normalImage:require('../Images/meUnselectedV4.png'),
-    selectedImage:require('../Images/meSelectedV4.png')
+    normalImage: require('../Images/meUnselectedV4.png'),
+    selectedImage: require('../Images/meSelectedV4.png')
   },
   naviBackImage: require('../Images/back_dark.png'),
 }
@@ -110,6 +111,7 @@ const tabNavigator = createBottomTabNavigator({
 export default createStackNavigator ({
   Home: {screen: tabNavigator, navigationOptions : {header: null}},
   Setting: {screen: SettingScene},
+  Login: LoginScene
 },{
     navigationOptions: {
       headerBackTitle: null,

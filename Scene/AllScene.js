@@ -3,8 +3,11 @@ import {
   Text, 
   View,
   Image,
-  Button
+  Button,
+  StyleSheet
 } from 'react-native';
+import ImageButton from "../Component/ImageButton";
+import SearchButton from "../Component/SearchButton";
 
 class ImageHeaderTitle extends Component {
   render() {
@@ -14,13 +17,15 @@ class ImageHeaderTitle extends Component {
   }
 }
 
-
 export default class AllScene extends Component {
 
-  static navigationOptions = {
+  static navigationOptions = ({navigation,screenProps})=> ({
     headerTitle: <ImageHeaderTitle />,
-  };
-  
+    headerRight: <SearchButton style={{marginRight: 16}} onPress={() => {
+      navigation.navigate('Setting')
+    }} />
+  });
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -33,3 +38,7 @@ export default class AllScene extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  
+})

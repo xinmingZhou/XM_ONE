@@ -13,6 +13,7 @@ import {
 import ImageButton from "../Component/ImageButton";
 import BorderLine from "../Component/BorderLine";
 import TextButton from "../Component/TextButton";
+import LoginButton from "../Component/LoginButton";
 
 var {height, width} = Dimensions.get('window')
 const images = {
@@ -21,34 +22,7 @@ const images = {
   third_weibo: require('../Images/Me/thirdweibo.png'),
   third_qq: require('../Images/Me/thirdqq.png'),
   loginBg: require('../Images/Me/loginBg.png'),
-  loginCircleBg: require('../Images/Me/loginCircleBg.png'),
-  loginOne: require('../Images/Me/loginOne.png'),
 }
-
-class LoginBTn extends Component {
-  render() {
-    return (
-      <View style={{alignItems: 'center', marginTop: -10}} >
-        <TouchableWithoutFeedback 
-          style={styles.loginOneBg}
-          onPress={() => this.loginOneOnPress()} >
-          <View style={{}} >
-            <ImageBackground  
-             style={styles.loginCircleBg} 
-             source={images.loginCircleBg} >
-             <Text style={styles.loginText} >登录</Text>
-             <Image source={images.loginOne} style={styles.loginOne} />
-            </ImageBackground>
-          </View>
-        </TouchableWithoutFeedback>
-      </View>
-    )
-  }
-
-  loginOneOnPress() {
-    alert("111111")
-  }
-} 
 
 export default class MeScene extends Component {
   static navigationOptions = ({navigation,screenProps}) => ({
@@ -57,7 +31,7 @@ export default class MeScene extends Component {
   });
 
   componentDidMount() {
-    console.log(this.props.navigation);
+    // console.log(this.props.navigation);
     
   }
   settingOnPress() {
@@ -67,6 +41,10 @@ export default class MeScene extends Component {
 
     this.props.navigation.navigate('Setting')
   }
+  loginButtonOnPress() {
+    this.props.navigation.navigate('Login')
+  }
+
   registerOnPress() {
     alert("点击了注册")
   }
@@ -85,7 +63,8 @@ export default class MeScene extends Component {
             source={images.setting} 
             onPress={() => this.settingOnPress()} />
         </ImageBackground>
-        <LoginBTn style={{}} ></LoginBTn>
+        <LoginButton style={{alignItems: 'center', marginTop: -10}} 
+          onPress={() => this.loginButtonOnPress()} ></LoginButton>
         <TextButton 
           style={styles.registerBtn}
           textStyle={{color: "#494949"}}
@@ -131,21 +110,6 @@ const styles = StyleSheet.create({
   loginBg: {
     height: height*0.4,
     width: width,
-  },
-  loginCircleBg: {
-    width: 98,
-    height: 98,
-    alignItems: 'center'
-  },
-  loginOneBg: {
-  },
-  loginText: {
-    color: 'white',
-    fontSize: 17,
-    marginTop: 28
-  },
-  loginOne: {
-    marginTop: 8
   },
   registerBtn: {
     marginTop: 50, 
