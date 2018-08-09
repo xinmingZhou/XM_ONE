@@ -16,10 +16,10 @@ export default class HomeScene extends Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Home!</Text>
-        {/* <Button
+        <Button
           title="Go to Setting"
           onPress={() => this.props.navigation.navigate('Setting')}
-        /> */}
+        />
       </View>
     );
   }

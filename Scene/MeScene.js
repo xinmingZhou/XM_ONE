@@ -32,12 +32,14 @@ class LoginBTn extends Component {
         <TouchableWithoutFeedback 
           style={styles.loginOneBg}
           onPress={() => this.loginOneOnPress()} >
-          <ImageBackground  
-            style={styles.loginCircleBg} 
-            source={images.loginCircleBg} >
-            <Text style={styles.loginText} >登录</Text>
-            <Image source={images.loginOne} style={styles.loginOne} />
-          </ImageBackground>
+          <View style={{}} >
+            <ImageBackground  
+             style={styles.loginCircleBg} 
+             source={images.loginCircleBg} >
+             <Text style={styles.loginText} >登录</Text>
+             <Image source={images.loginOne} style={styles.loginOne} />
+            </ImageBackground>
+          </View>
         </TouchableWithoutFeedback>
       </View>
     )
@@ -107,8 +109,8 @@ export default class MeScene extends Component {
         <View style={styles.serviceProtocol} >
         <TouchableWithoutFeedback onPress={() => this.serviceOnPress()} >
           <View style={{flexDirection: 'row'}} >
-            <Text style={{fontSize: 13, color: "gray"}} >创建账号即代表您同意</Text>
-            <Text style={{fontSize: 13}} >用户服务协议</Text>
+            <Text style={{fontSize: 12, color: "gray"}} >创建账号即代表您同意</Text>
+            <Text style={{fontSize: 12, color: "#494949"}} >用户服务协议</Text>
           </View>
         </TouchableWithoutFeedback>
         </View>
@@ -124,7 +126,7 @@ const styles = StyleSheet.create({
   },
   setting: {
     marginLeft: 16,
-    marginTop: 36
+    marginTop: 36,
   },
   loginBg: {
     height: height*0.4,

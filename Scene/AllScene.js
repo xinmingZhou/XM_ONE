@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { 
   Text, 
   View,
-  Image
+  Image,
+  Button
 } from 'react-native';
 
 class ImageHeaderTitle extends Component {
@@ -24,6 +25,10 @@ export default class AllScene extends Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>All!</Text>
+        <Button
+          title="Go to Setting"
+          onPress={() => this.props.navigation.navigate('Setting')}
+        />
       </View>
     );
   }
